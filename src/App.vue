@@ -4,6 +4,9 @@
       <plain-button :logic="runner" :status="status">111</plain-button>     
     </template>
   </ButtonCore>
+   <ButtonCore :logic="run" >
+    <plain-button >222</plain-button>  
+  </ButtonCore>
 </template>
 
 <script lang="ts">

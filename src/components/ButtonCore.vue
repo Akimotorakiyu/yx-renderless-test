@@ -20,6 +20,8 @@ export default defineComponent({
       status.pending = false;
     }
 
+    provide("ButtonCore", { status, runner });
+
     return { runner, status };
   },
 });
