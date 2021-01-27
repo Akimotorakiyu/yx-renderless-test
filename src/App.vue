@@ -1,6 +1,11 @@
 <template>
   <ButtonCore :logic="run" >
     <template #default="{runner,status}">
+      <button @click="runner" :disabled="status.pending">000</button>     
+    </template>
+  </ButtonCore>
+  <ButtonCore :logic="run" >
+    <template #default="{runner,status}">
       <plain-button :logic="runner" :status="status">111</plain-button>     
     </template>
   </ButtonCore>
