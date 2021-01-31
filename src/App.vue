@@ -22,7 +22,10 @@
       </template>
     </ButtonCore>
     <ButtonCore :logic="run">
-      <plain-button class="border rounded-lg px-2 py-1 m-1">222</plain-button>
+      <plain-button class="border rounded-lg px-2 py-1 m-1"
+        ><div>111</div>
+        <div>222</div></plain-button
+      >
     </ButtonCore>
   </div>
   <div>

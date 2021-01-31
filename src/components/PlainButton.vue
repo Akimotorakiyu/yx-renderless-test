@@ -4,7 +4,9 @@
     :disabled="status ? status.pending : injectData.status.pending"
     class="disabled:opacity-50"
   >
-    <slot>按钮</slot>
+    <span class="flex justify-center items-center">
+      <slot></slot>
+    </span>
   </button>
 </template>
 
