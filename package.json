@@ -2,9 +2,9 @@
   "name": "yx-renderless",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vuedx-typecheck . && vite build",
-    "serve": "vite preview"
+    "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.0.5"
