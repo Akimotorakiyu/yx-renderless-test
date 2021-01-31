@@ -3,24 +3,18 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, reactive, provide } from "vue";
-
+import { ref, defineComponent, reactive, provide, PropType } from "vue";
+import { useButtonCore } from "./buttonCore";
 export default defineComponent({
   name: "ButtonCore",
   props: {
-    logic: Function,
+    logic: {
+      type: Function as PropType<(event: Event) => void>,
+      require: true,
+    },
   },
   setup(props) {
-    const status = reactive({
-      pending: false,
-    });
-    async function runner() {
-      status.pending = true;
-      await props.logic?.();
-      status.pending = false;
-    }
-
-    provide("ButtonCore", { status, runner });
+    const { runner, status } = useButtonCore(props);
 
     return { runner, status };
   },

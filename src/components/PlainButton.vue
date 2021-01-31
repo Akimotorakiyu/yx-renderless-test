@@ -1,22 +1,25 @@
 <template>
-    <button @click="logic?.()||injectData.runner()" :disabled="status?status.pending:injectData.status.pending">
-        <slot>按钮</slot>
-    </button>
+  <button
+    @click="logic?.() || injectData.runner()"
+    :disabled="status ? status.pending : injectData.status.pending"
+  >
+    <slot>按钮</slot>
+  </button>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, reactive, PropType, inject } from "vue";
-
+import { defineComponent, reactive, PropType, inject } from "vue";
+import { injectButtonCore } from "./buttonCore";
 export default defineComponent({
   name: "ButtonCore",
   props: {
     logic: Function,
-    status:Object as PropType<{pending:boolean}>
+    status: Object as PropType<{ pending: boolean }>,
   },
   setup(props) {
-     const injectData =  inject<any>("ButtonCore")!
-  
-    return {injectData};
+    const injectData = injectButtonCore();
+
+    return { injectData };
   },
 });
 </script>
