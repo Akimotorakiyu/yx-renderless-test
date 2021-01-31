@@ -15,9 +15,11 @@ export function useButtonCore(props: {
     status.pending = false;
   }
 
-  provide(buttonCoreKey, { status, runner });
+  const buttonCore = { status, runner };
 
-  return { runner, status };
+  provide(buttonCoreKey, buttonCore);
+
+  return buttonCore;
 }
 
 export function injectButtonCore() {
