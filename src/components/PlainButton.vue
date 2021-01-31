@@ -2,6 +2,7 @@
   <button
     @click="logic?.() || injectData.runner()"
     :disabled="status ? status.pending : injectData.status.pending"
+    class="disabled:opacity-50"
   >
     <slot>按钮</slot>
   </button>
