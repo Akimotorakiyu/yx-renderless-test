@@ -63,7 +63,9 @@
         >危险</plain-button
       >
     </ButtonCore>
-    <TodoList> </TodoList>
+    <div class="w-2/3 mx-auto">
+      <TodoList> </TodoList>
+    </div>
   </div>
 </template>
 

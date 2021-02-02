@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { ref, computed, reactive } from "vue";
 import { nanoid } from "nanoid";
 export class PInputItem {
   value = ref("");
@@ -6,10 +6,10 @@ export class PInputItem {
 
   constructor(public toDoList: PToDoList) {}
 
-  add() {
+  add = () => {
     this.toDoList.itemList.addItem(this.value.value);
     this.value.value = "";
-  }
+  };
 }
 
 class TodoListItem {
@@ -22,6 +22,12 @@ class TodoListItem {
 
 export class PItemList {
   list = ref<TodoListItem[]>([]);
+  doneList = computed(() => {
+    return this.list.value.filter((item) => item.progress === "done");
+  });
+  pendingList = computed(() => {
+    return this.list.value.filter((item) => item.progress === "pending");
+  });
   constructor(public pToDoList: PToDoList) {
     this.addItem("1");
     this.addItem("2");
@@ -30,23 +36,26 @@ export class PItemList {
   /**
    * 调用 API 拉取
    */
-  getList() {}
+  getList = () => {};
   /**
    * 添加
    */
-  addItem(todo: string) {
+  addItem = (todo: string) => {
     this.list.value.unshift(new TodoListItem(todo));
-  }
+  };
   /**
    * 更新
    */
-  updateItem() {}
+  doneItem = (item: TodoListItem) => {
+    item.progress = "done";
+  };
   /**
    * 删除
    */
-  deleteItem(index: number) {
+  deleteItem = (id: string) => {
+    const index = this.list.value.findIndex((item) => item.id === id);
     this.list.value.splice(index, 1);
-  }
+  };
 }
 
 export class PToDoList {
