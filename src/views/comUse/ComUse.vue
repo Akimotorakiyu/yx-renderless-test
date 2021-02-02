@@ -31,37 +31,22 @@
   <div>
     <h2>带样式使用</h2>
     <ButtonCore :logic="run">
-      <plain-button class="border rounded-lg px-2 py-1 m-1">普通</plain-button>
+      <plain-button class="">普通</plain-button>
     </ButtonCore>
     <ButtonCore :logic="run">
-      <plain-button
-        class="bg-blue-500 border rounded-lg px-2 py-1 text-white m-1"
-        >主要</plain-button
-      >
+      <plain-button class="btn-primary">主要</plain-button>
     </ButtonCore>
     <ButtonCore :logic="run">
-      <plain-button
-        class="bg-green-500 border rounded-lg px-2 py-1 text-white m-1"
-        >成功</plain-button
-      >
+      <plain-button class="btn-success">成功</plain-button>
     </ButtonCore>
     <ButtonCore :logic="run">
-      <plain-button
-        class="bg-gray-500 border rounded-lg px-2 py-1 text-white m-1"
-        >信息</plain-button
-      >
+      <plain-button class="btn-info">信息</plain-button>
     </ButtonCore>
     <ButtonCore :logic="run">
-      <plain-button
-        class="bg-yellow-500 border rounded-lg px-2 py-1 text-white m-1"
-        >警告</plain-button
-      >
+      <plain-button class="btn-warning">警告</plain-button>
     </ButtonCore>
     <ButtonCore :logic="run">
-      <plain-button
-        class="bg-red-500 border rounded-lg px-2 py-1 text-white m-1"
-        >危险</plain-button
-      >
+      <plain-button class="btn-error">危险</plain-button>
     </ButtonCore>
   </div>
 </template>

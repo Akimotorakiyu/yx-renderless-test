@@ -2,7 +2,7 @@
   <button
     @click="logic?.() || injectData.runner()"
     :disabled="status ? status.pending : injectData.status.pending"
-    class="disabled:opacity-50"
+    class="btn disabled:opacity-50"
   >
     <span class="flex justify-center items-center">
       <slot></slot>

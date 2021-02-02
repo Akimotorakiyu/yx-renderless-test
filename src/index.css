@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply border rounded-lg px-2 py-1 m-1;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500  text-white m-1;
+  }
+
+  .btn-success {
+    @apply bg-green-500  text-white m-1;
+  }
+
+  .btn-info {
+    @apply bg-gray-500  text-white m-1;
+  }
+
+  .btn-warning {
+    @apply bg-yellow-500  text-white m-1;
+  }
+
+  .btn-error {
+    @apply bg-red-500  text-white m-1;
+  }
+}
