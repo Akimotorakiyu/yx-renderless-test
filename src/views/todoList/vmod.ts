@@ -29,9 +29,9 @@ export class PItemList {
     return this.list.value.filter((item) => item.progress === "pending");
   });
   constructor(public pToDoList: PToDoList) {
-    this.addItem("1");
-    this.addItem("2");
-    this.addItem("3");
+    this.addItem("事件1");
+    this.addItem("干事2");
+    this.addItem("上天3");
   }
   /**
    * 调用 API 拉取
