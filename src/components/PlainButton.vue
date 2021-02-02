@@ -14,7 +14,7 @@
 import { defineComponent, reactive, PropType, inject } from "vue";
 import { injectButtonCore } from "./buttonCore";
 export default defineComponent({
-  name: "ButtonCore",
+  name: "PlainButton",
   props: {
     logic: Function,
     status: Object as PropType<{ pending: boolean }>,
