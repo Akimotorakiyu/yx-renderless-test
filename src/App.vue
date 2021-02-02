@@ -63,6 +63,7 @@
         >危险</plain-button
       >
     </ButtonCore>
+    <TodoList> </TodoList>
   </div>
 </template>
 
@@ -70,12 +71,13 @@
 import { defineComponent } from "vue";
 import ButtonCore from "./components/ButtonCore.vue";
 import PlainButton from "./components/PlainButton.vue";
-
+import TodoList from "./views/todoList/TodoList.vue";
 export default defineComponent({
   name: "App",
   components: {
     ButtonCore,
     PlainButton,
+    TodoList,
   },
   setup() {
     function run() {
