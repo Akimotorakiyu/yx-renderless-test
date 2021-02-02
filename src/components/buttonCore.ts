@@ -2,11 +2,26 @@ import { inject, provide, reactive } from "vue";
 
 const buttonCoreKey = "ButtonCore";
 
-class ButtonCore {
+class ComponentCore {
+  readonly isComponentCoreInstance = true;
+}
+
+interface IButtonCore {
+  status: {
+    pending: boolean;
+  };
+  runner(event: Event): Promise<void>;
+}
+
+class ButtonCore extends ComponentCore implements IButtonCore {
   status = reactive({
     pending: false,
   });
 
+  /**
+   * 使用箭头函数
+   * @param event
+   */
   runner = async (event: Event) => {
     this.status.pending = true;
     await this.props.logic?.(event);
@@ -14,7 +29,7 @@ class ButtonCore {
   };
 
   constructor(public props: { logic?: ((event: Event) => void) | undefined }) {
-    provide(buttonCoreKey, this);
+    super();
   }
 }
 
