@@ -1,10 +1,10 @@
 <template>
-  <slot :runner="runner" :status="status"></slot>
+  <slot :runner="buttonCore.runner" :status="buttonCore.status"></slot>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent, reactive, provide, PropType } from "vue";
-import { useButtonCore } from "./buttonCore";
+import { ButtonCore } from "./buttonCore";
 export default defineComponent({
   name: "ButtonCore",
   props: {
@@ -14,9 +14,10 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { runner, status } = useButtonCore(props);
+    // const { runner, status } = useButtonCore(props);
+    const buttonCore = new ButtonCore(props);
 
-    return { runner, status };
+    return { buttonCore };
   },
 });
 </script>
