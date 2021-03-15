@@ -1,13 +1,11 @@
 <template>
-  <div class="mt-16">
-    <div class="w-2/3 mx-auto">
-      <ComUse></ComUse>
-    </div>
-
-    <div class="w-2/3 mx-auto">
-      <TodoList> </TodoList>
-    </div>
-  </div>
+  <router-view>
+    <template #default="{ Component }">
+      <keep-alive>
+        <component :is="Component"></component>
+      </keep-alive>
+    </template>
+  </router-view>
 </template>
 
 <script lang="ts">
